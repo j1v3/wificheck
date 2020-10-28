@@ -1,0 +1,105 @@
+#!/bin/bash
+#
+# 2020 → 2025 - j1v3d4v0m17
+#
+# v0.1
+#
+#	GNU GENERAL PUBLIC LICENSE
+#       Version 3, 29 June 2007Gnu Public Licence
+# 		
+#	Wifichek script by cracolinux suitable for Ubuntu 20.04
+#
+#	Author: Jeremy VINCENT
+#	5, place Camille Pelletan, 33000 Bordeaux, France
+#
+# 	Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+# 	Everyone is permitted to copy and distribute verbatim copies
+# 	of this license document, but changing it is not allowed.
+
+exec 3>&1
+exec 1>~/wificheck.log
+
+echo [code]
+
+# ubuntu version
+is_ubuntu20() {
+  [[ $(lsb_release -d) =~ "20"  ]]
+  return $?
+}
+
+# cat /etc/lsb-release
+echo -e "\n>>    cat /etc/lsb-release \n"
+cat /etc/lsb-release
+
+# lsusb
+echo -e "\n>>    lsusb \n"
+lsusb
+
+# lspci -k -nn | grep -A 3 -i net
+echo -e "\n>>    lspci -k -nn | grep -A 3 -i net \n"
+lspci -k -nn | grep -A 3 -i net
+
+# sudo lshw -C network
+echo -e "\n>>    sudo lshw -C network \n"
+sudo lshw -C network
+
+# lsmod
+echo -e "\n>>    lsmod | sort \n"
+lsmod | sort
+
+echo [/code]
+
+echo [code]
+
+# iwconfig
+echo -e "\n>>    iwconfig \n"
+iwconfig
+
+# ip a or ifconfig -a 
+if is_ubuntu20; then
+echo -e "\n>>    ip a \n"
+ip a
+else
+echo -e "\n>>    ifconfig -a \n"
+ifconfig -a
+fi
+
+# sudo iwlist scan
+echo -e "\n>>    sudo iwlist scan \n"
+sudo iwlist scan
+
+# uname -r -m
+echo -e "\n>>    uname -r -m \n"
+uname -r -m
+
+# cat /etc/network/interfaces
+echo -e "\n>>    cat /etc/network/interfaces \n"
+cat /etc/network/interfaces
+
+# nm-tool
+echo -e "\n>>    nm-tool \n"
+nm-tool
+
+# nmcli dev wifi
+echo -e "\n>>    nmcli dev wifi \n"
+nmcli dev wifi
+
+# nmcli connection
+echo -e "\n>>    nmcli connection list (< 15.04) ou nmcli connection show (>= 15.04) \n"
+nmcli c show 2>/dev/null || nmcli c list
+
+# nmcli connection status
+echo -e "\n>>    nmcli connection status \n"
+nmcli c status
+
+# sudo rfkill list
+echo -e "\n>>    sudo rfkill list \n"
+sudo rfkill list
+
+echo [/code]
+
+exec >&3-
+
+echo "Le fichier wificheck.log a été crée dans "$HOME""
+echo "Vous n'avez plus qu'à copier/coller son contenu sur le forum"
+echo " accès →→ file:/"$HOME"/wificheck.log"
