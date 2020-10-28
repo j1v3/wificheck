@@ -76,13 +76,15 @@ uname -r -m
 echo -e "\n>>    cat /etc/network/interfaces \n"
 cat /etc/network/interfaces
 
-# nm-tool
+# nm-tool or nmcli
 if is_ubuntu20; then
 echo -e "\n>>    nmcli device show \n"
 nmcli device show
 else
 echo -e "\n>>    nm-tool \n"
 nm-tool
+echo -e "\n>>    nmcli connection status \n"
+nmcli c status
 fi
 
 # nmcli dev wifi
@@ -92,10 +94,6 @@ nmcli dev wifi
 # nmcli connection
 echo -e "\n>>    nmcli connection list (< 15.04) ou nmcli connection show (>= 15.04) \n"
 nmcli c show 2>/dev/null || nmcli c list
-
-# nmcli connection status
-echo -e "\n>>    nmcli connection status \n"
-nmcli c status
 
 # sudo rfkill list
 echo -e "\n>>    sudo rfkill list \n"
