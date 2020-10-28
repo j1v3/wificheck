@@ -4,17 +4,15 @@
 #
 # v0.1
 #
-#	GNU GENERAL PUBLIC LICENSE
-#       Version 3, 29 June 2007Gnu Public Licence
-# 		
+#	Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+#       International Public License
+#       https://spdx.org/licenses/CC-BY-NC-SA-4.0.html
+#	
 #	Wifichek script by cracolinux suitable for Ubuntu 20.04
 #
 #	Author: Jeremy VINCENT
 #	5, place Camille Pelletan, 33000 Bordeaux, France
 #
-# 	Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
-# 	Everyone is permitted to copy and distribute verbatim copies
-# 	of this license document, but changing it is not allowed.
 
 exec 3>&1
 exec 1>~/wificheck.log
