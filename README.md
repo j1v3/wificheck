@@ -1,4 +1,4 @@
-## Wificheck for Ubuntu 20.04
+## Wificheck v0.1 for Ubuntu 20.04
 
 Wifichek script by cracolinux suitable for Ubuntu 20.04
 
