@@ -79,7 +79,7 @@ cat /etc/network/interfaces
 # nm-tool
 if is_ubuntu20; then
 echo -e "\n>>    nmcli device show \n"
-nmcli device show
+nmcli device shown
 else
 echo -e "\n>>    nm-tool \n"
 nm-tool
