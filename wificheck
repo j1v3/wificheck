@@ -21,7 +21,7 @@ echo [code]
 
 # ubuntu version
 is_ubuntu20() {
-  [[ $(lsb_release -d) =~ "20"  ]]
+  [[ $(lsb_release -d) =~ "Ubuntu 20"  ]]
   return $?
 }
 
