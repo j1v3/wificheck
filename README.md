@@ -1,6 +1,10 @@
-## Wificheck v0.1 for Ubuntu 20.04
+## Wificheck v0.1 suitable for Ubuntu 20.04
 
-Wifichek script by cracolinux suitable for Ubuntu 20.04
+Wificheck is a bash script created to facilitate the gathering of the information necessary to resolve most of the problems encountered with wireless connections.
+
+Based on the script from cracolinux, this version is suitable for Ubuntu 20.04.
+
+# Instructions for use 
 
 Copy and paste this line in a terminal, and validate with the enter key :
 
