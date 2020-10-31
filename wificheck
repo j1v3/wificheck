@@ -14,20 +14,20 @@
 #	5, place Camille Pelletan, 33000 Bordeaux, France
 #
 
-exec 3>&1
-exec 1>~/wificheck.log
-
-echo [code]
-
 # ubuntu version
 is_ubuntu20() {
   [[ $(lsb_release -d) =~ "Ubuntu 20"  ]]
   return $?
 }
 
+exec 3>&1
+exec 1>~/wificheck.log
+
+echo [code]
+
 # cat /etc/lsb-release
 echo -e "\n>>    cat /etc/lsb-release \n"
-cat /etc/lsb-release
+cat /etc/lsb-release -a
 
 # lsusb
 echo -e "\n>>    lsusb \n"
@@ -101,5 +101,5 @@ echo [/code]
 
 exec >&3-
 
-echo "Le fichier wificheck.log a été crée dans le repertoire où vous avez exécuté wificheck""
+echo "Le fichier wificheck.log a été crée dans votre répertoire $HOME"
 echo "Vous n'avez plus qu'à l'éditer et à copier/coller son contenu sur le forum"
