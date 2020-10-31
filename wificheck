@@ -16,7 +16,7 @@
 
 # ubuntu version
 is_ubuntu20() {
-  [[ $(lsb_release -d) =~ "Ubuntu 20"  ]]
+  [[ $(lsb_release -rs) =~ "Ubuntu 20"  ]]
   return $?
 }
 
