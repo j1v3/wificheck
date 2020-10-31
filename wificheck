@@ -101,6 +101,5 @@ echo [/code]
 
 exec >&3-
 
-echo "Le fichier wificheck.log a été crée dans "$HOME""
-echo "Vous n'avez plus qu'à copier/coller son contenu sur le forum"
-echo " accès →→ file:/"$HOME"/wificheck.log"
+echo "Le fichier wificheck.log a été crée dans le repertoire où vous avez exécuté wificheck""
+echo "Vous n'avez plus qu'à l'éditer et à copier/coller son contenu sur le forum"
